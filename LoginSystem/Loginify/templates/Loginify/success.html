@@ -2,9 +2,31 @@
 <html>
 <head>
     <title>Success</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .container {
+            background: aliceblue;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        h1,p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+    </style>
 </head>
+
 <body>
+    <div class="container">
     <h1>Welcome {{username}} !</h1>
     <p>Login successful.</p>
+</div>
 </body>
 </html>

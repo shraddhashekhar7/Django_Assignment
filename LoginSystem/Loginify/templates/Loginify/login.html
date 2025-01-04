@@ -4,21 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .container {
+            background: aliceblue;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background-color: rgb(0, 46, 114);
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+
+    
 </head>
 <body>
-    {% if messages %}
-        <!-- <div class="messages"> -->
-            <!-- {% for message in messages %} -->
-                <h5>{{ message }}</h5>
-            <!-- {% endfor %} -->
-        <!-- </div> -->
-    {% endif %}
-    <h1>Login Form</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Submit</button>
+    <div class="container">
+        <div>
+        {% if messages %}
+                {% for message in messages %}
+                    <h5>{{ message }}</h5>
+                {% endfor %}
+        {% endif %}
+        </div>
+        <h1>Login Form</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Submit</button>
 
-    </form>
+        </form>
+    </div>
 </body>
 </html>
